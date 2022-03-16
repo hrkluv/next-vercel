@@ -1,3 +1,5 @@
+import { GetStaticProps } from "next"
+
 export default function Sg({ random }: {random: number}) {
   return (
     <div>
@@ -7,9 +9,8 @@ export default function Sg({ random }: {random: number}) {
   )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const random = Math.floor( Math.random() * 100 )
-
   return {
     props: {
       random
