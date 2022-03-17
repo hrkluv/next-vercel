@@ -1,10 +1,12 @@
 import { GetStaticProps } from "next"
+import { useState } from "react"
 
 export default function Sg({ random }: {random: number}) {
+  const [num, setNum] = useState(random)
   return (
     <div>
       <p>SGで生成されたページ</p>
-      <em>{random}</em>
+      <em>{num}</em>
     </div>
   )
 }
