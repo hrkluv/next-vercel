@@ -7,6 +7,7 @@ export default function Sg({ random }: {random: number}) {
     <div>
       <p>SGで生成されたページ</p>
       <em>{num}</em>
+      <button type="button" onClick={() => setNum(num + 1)}>change</button>
     </div>
   )
 }
