@@ -21,15 +21,3 @@ export const getServerSideProps: GetServerSideProps = async () => {
     }
   }
 }
-
-/*
-export async function getServerSideProps() {
-  const random = Math.floor( Math.random() * 100 )
-
-  return {
-    props: {
-      random
-    }
-  }
-}
-*/
