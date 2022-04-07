@@ -1,4 +1,5 @@
 import React from "react"
+import Image from "next/image"
 import styled from "styled-components"
 import CardBodyMain from "./CardBodyMain"
 import CardBodyActions, {IconsObj} from "../components/CardBodyActions"
@@ -19,16 +20,7 @@ type StaticProps = {
   data: Data
 }
 
-const Icon = ({src}:{src:string}) => <StyledIcon><img src={src} width="100%" /></StyledIcon>
-
-const MultiLineBody = ({body}:{body:string}) => {
-  const text = body.split('\n').map((item, i) => (
-    <React.Fragment key={i}>
-      {item}<br/>
-    </React.Fragment>
-  ))
-  return <>{text}</>
-}
+const Icon = ({src}:{src:string}) => <StyledIcon><Image src={src} alt="" width={48} height={48} /></StyledIcon>
 
 const Card = (
   {
