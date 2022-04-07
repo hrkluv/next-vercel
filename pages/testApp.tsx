@@ -1,6 +1,16 @@
-import {useState} from 'react'
+import {useState, ReactNode} from 'react'
 
-function Search({value, onChange, children}) {
+function Search(
+  {
+    value,
+    onChange,
+    children
+  }:{
+    value: string
+    onChange: (e:any) => void
+    children: ReactNode
+  }
+) {
   return (
     <div>
       <label htmlFor="search">{children}</label>
@@ -17,7 +27,7 @@ function Search({value, onChange, children}) {
 function TestApp() {
   const [search, setSearch] = useState('')
 
-  function handleChange(e) {
+  function handleChange(e: any) {
     setSearch(e.target.value)
   }
 

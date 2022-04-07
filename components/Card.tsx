@@ -20,7 +20,7 @@ type StaticProps = {
 
 const Icon = ({src}:{src:string}) => <StyledIcon><img src={src} width="100%" /></StyledIcon>
 
-const CardBodyHeader = ({data}) => (
+const CardBodyHeader = ({data}:{data: Data}) => (
   <StyledCardBodyHeader>
     <div>
       <span><strong>{data.name}</strong></span>
@@ -31,7 +31,7 @@ const CardBodyHeader = ({data}) => (
   </StyledCardBodyHeader>
 )
 
-const CardBodyArticle = ({data}) => {
+const CardBodyArticle = ({data}:{data: Data}) => {
   return (
     <p style={{fontSize:'15px',padding:0,margin:0}}><MultiLineBody body={data.tweet} /></p>
   )
