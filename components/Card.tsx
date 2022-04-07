@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import CardBodyMain from "./CardBodyMain"
 import CardBodyActions, {IconsObj} from "../components/CardBodyActions"
 
 type Data = {
@@ -20,23 +21,6 @@ type StaticProps = {
 
 const Icon = ({src}:{src:string}) => <StyledIcon><img src={src} width="100%" /></StyledIcon>
 
-const CardBodyHeader = ({data}:{data: Data}) => (
-  <StyledCardBodyHeader>
-    <div>
-      <span><strong>{data.name}</strong></span>
-      <span style={{color:"#536471"}}>{data.id}</span>
-    </div>
-    <span style={{color:"#536471"}}>・</span>
-    <a href="#" style={{color:"#536471",textDecoration:"none"}}>{data.createAt}</a>
-  </StyledCardBodyHeader>
-)
-
-const CardBodyArticle = ({data}:{data: Data}) => {
-  return (
-    <p style={{fontSize:'15px',padding:0,margin:0}}><MultiLineBody body={data.tweet} /></p>
-  )
-}
-
 const MultiLineBody = ({body}:{body:string}) => {
   const text = body.split('\n').map((item, i) => (
     <React.Fragment key={i}>
@@ -56,8 +40,7 @@ const Card = (
     <Wrapper>
       <Icon src={data.icon} />
       <CardBody>
-        <CardBodyHeader data={data} />
-        <CardBodyArticle data={data} />
+        <CardBodyMain data={data} />
         <CardBodyActions iconsObj={iconsObj} style={{color:'#f00'}} />
       </CardBody>
     </Wrapper>
@@ -74,15 +57,6 @@ const StyledIcon = styled.div`
 const CardBody = styled.div`
   flex: 1;
 `
-const StyledCardBodyHeader = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: 15px;
-  > div {
-    display: flex;
-    align-items: center;
-    gap: 0 8px;
-  }
-`
+
 
 export default Card
