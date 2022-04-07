@@ -20,7 +20,7 @@ type StaticProps = {
   data: Data
 }
 
-const Icon = ({src}:{src:string}) => <StyledIcon><img src={src} width="100%" /></StyledIcon>
+const Icon = ({src}:{src:string}) => <StyledIcon><Image src={src} alt="" width={48} height={48} /></StyledIcon>
 
 const Card = (
   {
